@@ -13,4 +13,8 @@
             <directory>./src/Example.php</directory>
         </exclude>
     </coverage>
+    <logging>
+        <junit outputFile="coverage.xml"/>
+        <testdoxHtml outputFile="coverage.html"/>
+    </logging>
 </phpunit>
