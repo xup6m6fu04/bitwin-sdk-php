@@ -1,0 +1,29 @@
+{
+  "name": "xup6m6fu04/bitwin-sdk-php",
+  "description": "Bitwin API version.3 SDK for PHP",
+  "keywords": ["bitwin", "sdk"],
+  "type": "library",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Xup6m6fu04\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Xup6m6fu04\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "xup6m6fu04",
+      "email": "sarah82529@gmail.com"
+    }
+  ]
+}
