@@ -6,26 +6,26 @@
 [![codecov](https://codecov.io/gh/xup6m6fu04/bitwin-sdk-php/branch/master/graph/badge.svg)](https://codecov.io/gh/xup6m6fu04/bitwin-sdk-php)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fxup6m6fu04%2Fbitwin-sdk-php.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fxup6m6fu04%2Fbitwin-sdk-php?ref=badge_shield)
 
-## Introduction
-The BITWIN SDK for PHP makes it easy to develop bots using BITWIN merchant api, and you can create a sample client within minutes.
+## 簡介
+為了減少使用者串接 API 所耗費時間過多，你可以使用這個 PHP SDK 輕鬆的建立與串接 BITWIN 的商戶 API
 
-## Documentation
+## 文件
 
-See the official API documentation for more information.
+查看官方 API 文件已獲得更多細節
 
-- Simple Chinese: https://bitwin.ai/api_manual_latest.html
+- 簡體中文: https://bitwin.ai/api_manual_latest.html
 
-## Requirements
+## 需求
 
-This library requires PHP 7.4 or later.
+至少需要 PHP 7.4 或以上版本.
 
-## Installation ##
+## 安裝 ##
 
 ```sh
 $ composer require xup6m6fu04/bitwin-sdk-php
 ```
 
-## Configuration ##
+## 構建 ##
 
 ```php
 <?php
@@ -102,8 +102,8 @@ class Example
     }
     ...
 ```
-## Example ##
-### *[Please refer to the sample code](src/Example.php)*
+## 範例 ##
+### *[請參考此處程式碼](src/Example.php)*
 
 ## Versioning
 This project respects semantic versioning.
