@@ -65,5 +65,8 @@ class QueryCryptoPayOrderTest extends TestCase
             'ReturnMessage' => '',
             'Sign' => 'ED8B4222F79429E05B5F4E2F0BC49944'
         ], $response->getJSONDecodedBody());
+        $this->assertEquals(200, $response->getHTTPStatus());
+        $this->assertEquals(true, $response->isSucceeded());
+        $this->assertIsArray($response->getHeaders());
     }
 }

@@ -17,7 +17,7 @@
 
 ## 需求
 
-至少需要 PHP 7.1 或以上版本.
+至少需要 PHP 7.2.5 或以上版本.
 
 ## 安装 ##
 
@@ -34,7 +34,7 @@ require "vendor/autoload.php";
 
 use Xup6m6fu04\Bitwin;
 use Xup6m6fu04\Bitwin\Exception\BitwinSDKException;
-use Xup6m6fu04\Bitwin\HTTPClient\CurlHTTPClient;
+use Xup6m6fu04\Bitwin\HTTPClient\GuzzleHTTPClient;
 
 $c = new Example();
 $c->createCryptoPayOrder();
@@ -42,7 +42,7 @@ $c->createCryptoPayOrder();
 class Example
 {
     /**
-     * @var \Xup6m6fu04\Bitwin\HTTPClient\CurlHTTPClient
+     * @var \Xup6m6fu04\Bitwin\HTTPClient\GuzzleHTTPClient
      */
     private $httpClient;
     /**
@@ -55,7 +55,7 @@ class Example
      */
     public function __construct()
     {
-        $this->httpClient = new CurlHTTPClient();
+        $this->httpClient = new GuzzleHTTPClient();
         $this->bitwin = new Bitwin($this->httpClient, [
             'merchant_id' => 'your_merchant_id',
             'sign_key' => 'your_sign_key',

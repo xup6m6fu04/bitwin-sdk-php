@@ -61,5 +61,8 @@ class QueryMerchantWithdrawTest extends TestCase
             'ReturnMessage' => '',
             'Sign' => '23821A64B674B01D2D35CF0DCC41CCB3'
         ], $response->getJSONDecodedBody());
+        $this->assertEquals(200, $response->getHTTPStatus());
+        $this->assertEquals(true, $response->isSucceeded());
+        $this->assertIsArray($response->getHeaders());
     }
 }

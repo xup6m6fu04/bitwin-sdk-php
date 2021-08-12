@@ -51,16 +51,6 @@ class Response
     }
 
     /**
-     * Returns raw response body.
-     *
-     * @return string Raw request body.
-     */
-    public function getRawBody(): string
-    {
-        return $this->body;
-    }
-
-    /**
      * Returns response body as array (it means, returns JSON decoded body).
      *
      * @return array Request body that is JSON decoded.
@@ -68,20 +58,6 @@ class Response
     public function getJSONDecodedBody(): array
     {
         return json_decode($this->body, true);
-    }
-
-    /**
-     * Returns the value of the specified response header.
-     *
-     * @param string $name A String specifying the header name.
-     * @return string|null A response header string, or null if the response does not have a header of that name.
-     */
-    public function getHeader(string $name)
-    {
-        if (isset($this->headers[$name])) {
-            return $this->headers[$name];
-        }
-        return null;
     }
 
     /**

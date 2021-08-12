@@ -47,5 +47,8 @@ class BuildRelationUserTest extends TestCase
             'ReturnMessage' => '',
             'Sign' => 'C00CA273DC3CA6CBDA81E2EB2B12B5D5'
         ], $response->getJSONDecodedBody());
+        $this->assertEquals(200, $response->getHTTPStatus());
+        $this->assertEquals(true, $response->isSucceeded());
+        $this->assertIsArray($response->getHeaders());
     }
 }

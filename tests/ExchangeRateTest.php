@@ -43,5 +43,8 @@ class ExchangeRateTest extends TestCase
             'ReturnCode' => '200',
             'ReturnMessage' => ''
         ], $response->getJSONDecodedBody());
+        $this->assertEquals(200, $response->getHTTPStatus());
+        $this->assertEquals(true, $response->isSucceeded());
+        $this->assertIsArray($response->getHeaders());
     }
 }
