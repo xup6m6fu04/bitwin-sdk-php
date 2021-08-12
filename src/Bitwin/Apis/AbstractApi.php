@@ -15,7 +15,7 @@ abstract class AbstractApi
     /** @var string */
     private $url;
     /** @var HTTPClient */
-    private HTTPClient $httpClient;
+    private $httpClient;
 
     /**
      * @throws BitwinSDKException

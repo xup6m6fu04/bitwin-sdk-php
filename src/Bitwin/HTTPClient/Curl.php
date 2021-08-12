@@ -14,7 +14,6 @@ class Curl
 
     /**
      * Initialize a cURL session
-     *
      * @param string $url
      */
     public function __construct(string $url)
@@ -29,7 +28,7 @@ class Curl
      * successfully set, FALSE is immediately returned, ignoring any future options in the options array.
      * @return bool
      */
-    public function setoptArray(array $options): bool
+    public function setOptArray(array $options): bool
     {
         return curl_setopt_array($this->ch, $options);
     }
@@ -50,7 +49,7 @@ class Curl
      *
      * @return array
      */
-    public function getinfo(): array
+    public function getInfo(): array
     {
         return curl_getinfo($this->ch);
     }

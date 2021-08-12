@@ -2,7 +2,6 @@
 
 namespace Xup6m6fu04;
 
-use Xup6m6fu04\Bitwin\Apis\AbstractApi;
 use Xup6m6fu04\Bitwin\Apis\BuildRelationUser;
 use Xup6m6fu04\Bitwin\Apis\CreateCryptoPayOrder;
 use Xup6m6fu04\Bitwin\Apis\ExchangeRate;
@@ -23,9 +22,9 @@ class Bitwin
     /** @var string */
     private $signKey;
     /** @var string */
-    private string $endpointBase;
+    private $endpointBase;
     /** @var HTTPClient */
-    private HTTPClient $httpClient;
+    private $httpClient;
 
     /**
      * @throws BitwinSDKException

@@ -9,9 +9,9 @@ use PHPUnit\Framework\TestCase;
 class DummyHttpClient implements HTTPClient
 {
     /** @var \PHPUnit\Framework\TestCase */
-    private TestCase $testRunner;
+    private $testRunner;
     /** @var \Closure */
-    private \Closure $mock;
+    private $mock;
     /** @var int */
     private $statusCode;
 

@@ -16,11 +16,11 @@ use Xup6m6fu04\Bitwin\Response;
 class CurlHTTPClient implements HTTPClient
 {
     /** @var array */
-    private array $defaultHeaders;
+    private $defaultHeaders;
     /** @var int */
-    private int $timeout;
+    private $timeout;
     /** @var int */
-    private int $connectTimeout;
+    private $connectTimeout;
 
     /**
      * CurlHTTPClient constructor.
@@ -141,7 +141,7 @@ class CurlHTTPClient implements HTTPClient
         $headers = array_merge($this->defaultHeaders, $additionalHeader);
 
         $options = $this->getOptions($method, $headers, $reqBody);
-        $curl->setoptArray($options);
+        $curl->setOptArray($options);
 
         $result = $curl->exec();
 
@@ -149,7 +149,7 @@ class CurlHTTPClient implements HTTPClient
             throw new CurlExecutionException($curl->error());
         }
 
-        $info = $curl->getinfo();
+        $info = $curl->getInfo();
         $httpStatus = $info['http_code'];
 
         $responseHeaderSize = $info['header_size'];

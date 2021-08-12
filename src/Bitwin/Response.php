@@ -10,11 +10,11 @@ namespace Xup6m6fu04\Bitwin;
 class Response
 {
     /** @var int */
-    private int $httpStatus;
+    private $httpStatus;
     /** @var string */
-    private string $body;
+    private $body;
     /** @var string[] */
-    private array $headers;
+    private $headers;
 
     /**
      * Response constructor.
@@ -76,7 +76,7 @@ class Response
      * @param string $name A String specifying the header name.
      * @return string|null A response header string, or null if the response does not have a header of that name.
      */
-    public function getHeader(string $name): ?string
+    public function getHeader(string $name)
     {
         if (isset($this->headers[$name])) {
             return $this->headers[$name];

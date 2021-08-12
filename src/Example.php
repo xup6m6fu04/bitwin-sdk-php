@@ -25,6 +25,7 @@ $c = new Example();
 /*查詢建議匯率*/
 //$c->exchangeRate();
 /*BITWIN 會員錢包綁定*/
+
 //$c->buildRelationUser();
 
 class Example
@@ -32,11 +33,11 @@ class Example
     /**
      * @var \Xup6m6fu04\Bitwin\HTTPClient\CurlHTTPClient
      */
-    private CurlHTTPClient $httpClient;
+    private $httpClient;
     /**
      * @var \Xup6m6fu04\Bitwin
      */
-    private Bitwin $bitwin;
+    private $bitwin;
 
     /**
      * @throws \Xup6m6fu04\Bitwin\Exception\BitwinSDKException
@@ -145,21 +146,21 @@ class Example
              *     [Sign] => ED8B4222F79429E05B5F4E2F0BC49944
              * )
              */
-             /**
-              * If users paid, your callback server will receive JSON like
-              * array (
-              *  'MerchantId' => 'your_merchant_id',
-              *  'MerchantOrderId' => 'YOZERO_ORDER_01',
-              *  'OrderId' => '53298248131218784',
-              *  'Symbol' => 'USDT_ERC20',
-              *  'Amount' => '700000000',
-              *  'PayAmount' => '700000000',
-              *  'MerchantRMB' => '45.38',
-              *  'ExchangeRMB' => '45.85',
-              *  'PayUnixTimestamp' => 1628667177,
-              *  'Sign' => '4B8CEE2EED8A86D1A2C47752E11FA818',
-              *  )
-              */
+            /**
+             * If users paid, your callback server will receive JSON like
+             * array (
+             *  'MerchantId' => 'your_merchant_id',
+             *  'MerchantOrderId' => 'YOZERO_ORDER_01',
+             *  'OrderId' => '53298248131218784',
+             *  'Symbol' => 'USDT_ERC20',
+             *  'Amount' => '700000000',
+             *  'PayAmount' => '700000000',
+             *  'MerchantRMB' => '45.38',
+             *  'ExchangeRMB' => '45.85',
+             *  'PayUnixTimestamp' => 1628667177,
+             *  'Sign' => '4B8CEE2EED8A86D1A2C47752E11FA818',
+             *  )
+             */
         } catch (BitwinSDKException | Exception $e) {
             echo $e->getMessage();
         }
@@ -234,42 +235,42 @@ class Example
              *     [Sign] => 23821A64B674B01D2D35CF0DCC41CCB3
              * )
              */
-             /**
-              * Successfully printed the result (SUCCESS)
-              * Array
-              * (
-              *     [MerchantUserId] => YOZERO_USER_01
-              *     [UserWallet] => 0x875EDa094F03Ed4c93adb3dbb77913F860dC888f
-              *     [WithdrawId] => 53304076324244832
-              *     [MerchantWithdrawId] => YOZERO_WITHDRAW_01
-              *     [Symbol] => USDT_ERC20
-              *     [Amount] => 1000000000
-              *     [MerchantRMB] => 64.81
-              *     [ExchangeRMB] => 68.00
-              *     [Status] => SUCCESS
-              *     [WithdrawDateTime] => 1628671968
-              *     [ApprovedDateTime] => 1628671529
-              *     [ReturnCode] => 200
-              *     [ReturnMessage] =>
-              *     [Sign] => B94D0315F82ABBA5B5003C3B97B3B067
-              * )
-              */
-              /**
-               * If withdraw success, your callback server will receive JSON like
-               * {
-               *    "MerchantId": "your_merchant_id",
-               *    "MerchantUserId": "YOZERO_USER_01",
-               *    "MerchantWithdrawId": "YOZERO_WITHDRAW_01",
-               *    "UserWallet": "x875EDa094F03Ed4c93adb3dbb77913F860dC888f",
-               *    "WithdrawId": "53304076324244832",
-               *    "WithdrawAmount": "1000000000",
-               *    "MerchantRMB": "64.81",
-               *    "ExchangeRMB": "68.00",
-               *    "Symbol": "USDT_ERC20",
-               *    "ReplyDateTime": 1628671968,
-               *    "Sign": "B8197B5498E4BB6289CBFD39AE282AF0"
-               * }
-               */
+            /**
+             * Successfully printed the result (SUCCESS)
+             * Array
+             * (
+             *     [MerchantUserId] => YOZERO_USER_01
+             *     [UserWallet] => 0x875EDa094F03Ed4c93adb3dbb77913F860dC888f
+             *     [WithdrawId] => 53304076324244832
+             *     [MerchantWithdrawId] => YOZERO_WITHDRAW_01
+             *     [Symbol] => USDT_ERC20
+             *     [Amount] => 1000000000
+             *     [MerchantRMB] => 64.81
+             *     [ExchangeRMB] => 68.00
+             *     [Status] => SUCCESS
+             *     [WithdrawDateTime] => 1628671968
+             *     [ApprovedDateTime] => 1628671529
+             *     [ReturnCode] => 200
+             *     [ReturnMessage] =>
+             *     [Sign] => B94D0315F82ABBA5B5003C3B97B3B067
+             * )
+             */
+            /**
+             * If withdraw success, your callback server will receive JSON like
+             * {
+             *    "MerchantId": "your_merchant_id",
+             *    "MerchantUserId": "YOZERO_USER_01",
+             *    "MerchantWithdrawId": "YOZERO_WITHDRAW_01",
+             *    "UserWallet": "x875EDa094F03Ed4c93adb3dbb77913F860dC888f",
+             *    "WithdrawId": "53304076324244832",
+             *    "WithdrawAmount": "1000000000",
+             *    "MerchantRMB": "64.81",
+             *    "ExchangeRMB": "68.00",
+             *    "Symbol": "USDT_ERC20",
+             *    "ReplyDateTime": 1628671968,
+             *    "Sign": "B8197B5498E4BB6289CBFD39AE282AF0"
+             * }
+             */
         } catch (BitwinSDKException | Exception $e) {
             echo $e->getMessage();
         }
@@ -329,20 +330,20 @@ class Example
              *     [Sign] => C00CA273DC3CA6CBDA81E2EB2B12B5D5
              * )
              */
-             /**
-              * After user scan, your callback server will receive JSON like
-              * {
-              *    "MerchantId": "your_merchant_id",
-              *    "MerchantUserId": "YOZERO_USER_01",
-              *    "UserName": "48847933077253904",
-              *    "BTC": "2My4ttAncyVKbAQWwAMLsG7JCMif3KkpHBC",
-              *    "ETH": "0xe4f3Ad1005ac2FbD22f7F22871A8Ea1d688866a0",
-              *    "USDT_ERC20": "0x7F8FAe2d400cD767d4184638eD296DBc44F218Bb",
-              *    "USDT_TRC20": "TYGzJX3tyDy81eQGGw92US821LiykuHPFi",
-              *    "USDT_BEP20": "0x84e6B02d0223c004bc350F481038371Cfd7e4512",
-              *    "Sign": "BE5756882B97BAADB8AAF86A49441FCA"
-              * }
-              */
+            /**
+             * After user scan, your callback server will receive JSON like
+             * {
+             *    "MerchantId": "your_merchant_id",
+             *    "MerchantUserId": "YOZERO_USER_01",
+             *    "UserName": "48847933077253904",
+             *    "BTC": "2My4ttAncyVKbAQWwAMLsG7JCMif3KkpHBC",
+             *    "ETH": "0xe4f3Ad1005ac2FbD22f7F22871A8Ea1d688866a0",
+             *    "USDT_ERC20": "0x7F8FAe2d400cD767d4184638eD296DBc44F218Bb",
+             *    "USDT_TRC20": "TYGzJX3tyDy81eQGGw92US821LiykuHPFi",
+             *    "USDT_BEP20": "0x84e6B02d0223c004bc350F481038371Cfd7e4512",
+             *    "Sign": "BE5756882B97BAADB8AAF86A49441FCA"
+             * }
+             */
         } catch (BitwinSDKException | Exception $e) {
             echo $e->getMessage();
         }

@@ -17,7 +17,7 @@ See the official API documentation for more information.
 
 ## Requirements
 
-This library requires PHP 7.4 or later.
+This library requires PHP 7.1 or later.
 
 ## Installation ##
 
@@ -37,17 +37,18 @@ use Xup6m6fu04\Bitwin\Exception\BitwinSDKException;
 use Xup6m6fu04\Bitwin\HTTPClient\CurlHTTPClient;
 
 $c = new Example();
+$c->createCryptoPayOrder();
 
 class Example
 {
     /**
      * @var \Xup6m6fu04\Bitwin\HTTPClient\CurlHTTPClient
      */
-    private CurlHTTPClient $httpClient;
+    private $httpClient;
     /**
      * @var \Xup6m6fu04\Bitwin
      */
-    private Bitwin $bitwin;
+    private $bitwin;
 
     /**
      * @throws \Xup6m6fu04\Bitwin\Exception\BitwinSDKException
