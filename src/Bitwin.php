@@ -91,4 +91,13 @@ class Bitwin
     {
         return $this->httpClient;
     }
+
+    public function verifySign($args): bool
+    {
+        $sign = $args['Sign'];
+        unset($args['Sign']);
+        ksort($args);
+        $args = array_filter($args);
+        return $sign === strtoupper(md5(implode(',', $args) . ',' . $this->signKey));
+    }
 }

@@ -64,4 +64,31 @@ class BitwinTest extends TestCase
         $bitwin = new Bitwin($client, $config);
         $bitwin->api('no_exist')->call([]);
     }
+
+    /**
+     * @throws \Xup6m6fu04\Bitwin\Exception\BitwinSDKException
+     */
+    public function testVerifySign()
+    {
+        $client = new GuzzleHTTPClient();
+        $config = [
+            'merchant_id' => 'test_merchant_id',
+            'sign_key' => 'test_sign_key',
+            'is_prod_environment' => false
+        ];
+        $args = [
+            "MerchantId" => "your_merchant_id",
+            "MerchantUserId" => "YOZERO_USER_01",
+            "UserName" => "48847933077253904",
+            "BTC" => "2My4ttAncyVKbAQWwAMLsG7JCMif3KkpHBC",
+            "ETH" => "0xe4f3Ad1005ac2FbD22f7F22871A8Ea1d688866a0",
+            "USDT_ERC20" => "0x7F8FAe2d400cD767d4184638eD296DBc44F218Bb",
+            "USDT_TRC20" => "TYGzJX3tyDy81eQGGw92US821LiykuHPFi",
+            "USDT_BEP20" => "0x84e6B02d0223c004bc350F481038371Cfd7e4512",
+            "Sign" => "EF628A06A7038E80E3EB51A57F4777E2"
+        ];
+        $bitwin = new Bitwin($client, $config);
+        $result = $bitwin->verifySign($args);
+        $this->assertEquals(true, $result);
+    }
 }
