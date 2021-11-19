@@ -14,7 +14,8 @@ interface HTTPClient
      *
      * @param string $url Request URL.
      * @param array $data Request body.
+     * @param array $headers Request body.
      * @return \Xup6m6fu04\Bitwin\Response Response of API request.
      */
-    public function post(string $url, array $data): Response;
+    public function post(string $url, array $data, array $headers = []): Response;
 }

@@ -16,6 +16,7 @@ class QueryMerchantWithdrawTest extends TestCase
         $config = [
             'merchant_id' => 'test_merchant_id',
             'sign_key' => 'test_sign_key',
+            'access_key' => 'test_access_key',
             'is_prod_environment' => false
         ];
         $args = [

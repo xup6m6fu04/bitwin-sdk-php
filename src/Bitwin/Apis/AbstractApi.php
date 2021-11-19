@@ -13,6 +13,8 @@ abstract class AbstractApi
     /** @var string */
     private $signKey;
     /** @var string */
+    private $accessKey;
+    /** @var string */
     private $url;
     /** @var HTTPClient */
     private $httpClient;
@@ -20,7 +22,7 @@ abstract class AbstractApi
     /**
      * @throws BitwinSDKException
      */
-    public function __construct(HTTPClient $httpClient = null, $url = null, $signKey = null, $merchantId = null)
+    public function __construct(HTTPClient $httpClient = null, $url = null, $signKey = null, $accessKey = null, $merchantId = null)
     {
         if (is_null($httpClient)) {
             throw new BitwinSdkException('httpClient must be set when call APIs.');
@@ -34,12 +36,17 @@ abstract class AbstractApi
             throw new BitwinSdkException('signKey must be set when call APIs.');
         }
 
+        if (is_null($accessKey)) {
+            throw new BitwinSdkException('accessKey must be set when call APIs.');
+        }
+
         if (is_null($merchantId)) {
             throw new BitwinSdkException('merchantId must be set when call APIs.');
         }
 
         $this->merchantId = $merchantId;
         $this->signKey = $signKey;
+        $this->accessKey = $accessKey;
         $this->httpClient = $httpClient;
         $this->url = $url;
     }
@@ -59,6 +66,6 @@ abstract class AbstractApi
 
     public function post($args): Response
     {
-        return $this->httpClient->post($this->url, $args);
+        return $this->httpClient->post($this->url, $args, ['X-Bitwin-Access' => $this->accessKey]);
     }
 }

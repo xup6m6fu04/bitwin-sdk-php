@@ -13,7 +13,7 @@ class GuzzleHTTPClientTest extends TestCase
     public function testPostRequest()
     {
         $client = new GuzzleHTTPClient();
-        $response = $client->post('https://httpbin.org/post', []);
+        $response = $client->post('https://httpbin.org/post', [], []);
         $this->assertEquals(200, $response->getHTTPStatus());
     }
 }

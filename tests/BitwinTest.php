@@ -17,6 +17,7 @@ class BitwinTest extends TestCase
         $client = new GuzzleHTTPClient();
         $config = [
             'sign_key' => 'test_sign_key',
+            'access_key' => 'test_access_key',
             'is_prod_environment' => false
         ];
         new Bitwin($client, $config);
@@ -29,6 +30,20 @@ class BitwinTest extends TestCase
         $client = new GuzzleHTTPClient();
         $config = [
             'merchant_id' => 'test_merchant_id',
+            'access_key' => 'test_access_key',
+            'is_prod_environment' => false
+        ];
+        new Bitwin($client, $config);
+    }
+
+    public function testInstantiatingWithoutAccessKeyThrows()
+    {
+        $this->expectException(BitwinSDKException::class);
+        $this->expectExceptionMessage('Required "access_key"');
+        $client = new GuzzleHTTPClient();
+        $config = [
+            'merchant_id' => 'test_merchant_id',
+            'sign_key' => 'test_sign_key',
             'is_prod_environment' => false
         ];
         new Bitwin($client, $config);
@@ -43,6 +58,7 @@ class BitwinTest extends TestCase
         $config = [
             'merchant_id' => 'test_merchant_id',
             'sign_key' => 'test_sign_key',
+            'access_key' => 'test_access_key',
             'is_prod_environment' => false
         ];
         $bitwin = new Bitwin($client, $config);
@@ -59,6 +75,7 @@ class BitwinTest extends TestCase
         $config = [
             'merchant_id' => 'test_merchant_id',
             'sign_key' => 'test_sign_key',
+            'access_key' => 'test_access_key',
             'is_prod_environment' => false
         ];
         $bitwin = new Bitwin($client, $config);
@@ -74,6 +91,7 @@ class BitwinTest extends TestCase
         $config = [
             'merchant_id' => 'test_merchant_id',
             'sign_key' => 'test_sign_key',
+            'access_key' => 'test_access_key',
             'is_prod_environment' => false
         ];
         $args = [

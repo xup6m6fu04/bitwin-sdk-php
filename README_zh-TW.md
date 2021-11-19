@@ -59,6 +59,7 @@ class Example
         $this->bitwin = new Bitwin($this->httpClient, [
             'merchant_id' => 'your_merchant_id',
             'sign_key' => 'your_sign_key',
+            'access_key' => 'your_access_key',
             'is_prod_environment' => false, // true is production environment
         ]);
     }

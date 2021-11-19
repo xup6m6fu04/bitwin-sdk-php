@@ -22,15 +22,15 @@ class GuzzleHTTPClient implements HTTPClient
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function post(string $url, array $data): Response
+    public function post(string $url, array $data, array $headers = []): Response
     {
-        return $this->sendRequest($url, $data);
+        return $this->sendRequest($url, $data, $headers);
     }
 
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    private function sendRequest(string $url, array $data): Response
+    private function sendRequest(string $url, array $data, array $headers = []): Response
     {
         $args = array_merge([
             'timeout' => 20,
@@ -39,7 +39,8 @@ class GuzzleHTTPClient implements HTTPClient
 
         $client = new Client($args);
         $response = $client->post($url, [
-            'json' => $data
+            'json' => $data,
+            'headers' => $headers
         ]);
         return new Response($response->getStatusCode(), $response->getBody(), $response->getHeaders());
     }

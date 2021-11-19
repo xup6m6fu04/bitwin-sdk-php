@@ -23,7 +23,7 @@ class AbstractApiTest extends TestCase
     {
         $this->expectException(BitwinSDKException::class);
         $this->expectExceptionMessage('httpClient must be set when call APIs.');
-        new $this->abstractApiTest(null, 'test_url', 'test_sign_key', 'merchant_id');
+        new $this->abstractApiTest(null, 'test_url', 'test_sign_key', 'test_access_key', 'merchant_id');
     }
 
     public function testAbstractApiOrderUrlThrows()
@@ -31,7 +31,7 @@ class AbstractApiTest extends TestCase
         $this->expectException(BitwinSDKException::class);
         $this->expectExceptionMessage('endpointBase must be set when call APIs.');
         $httpClient = new DummyHttpClient($this, function(){});
-        new $this->abstractApiTest($httpClient, null, 'test_sign_key', 'merchant_id');
+        new $this->abstractApiTest($httpClient, null, 'test_sign_key', 'test_access_key', 'merchant_id');
     }
 
     public function testAbstractApiOrderSignKeyThrows()
@@ -39,7 +39,15 @@ class AbstractApiTest extends TestCase
         $this->expectException(BitwinSDKException::class);
         $this->expectExceptionMessage('signKey must be set when call APIs.');
         $httpClient = new DummyHttpClient($this, function(){});
-        new $this->abstractApiTest($httpClient, 'test_url', null, 'merchant_id');
+        new $this->abstractApiTest($httpClient, 'test_url', null, 'test_access_key', 'merchant_id');
+    }
+
+    public function testAbstractApiOrderAccessKeyThrows()
+    {
+        $this->expectException(BitwinSDKException::class);
+        $this->expectExceptionMessage('accessKey must be set when call APIs.');
+        $httpClient = new DummyHttpClient($this, function(){});
+        new $this->abstractApiTest($httpClient, 'test_url', 'test_sign_key', null, 'merchant_id');
     }
 
     public function testAbstractApiOrderMerchantIdThrows()
@@ -47,6 +55,6 @@ class AbstractApiTest extends TestCase
         $this->expectException(BitwinSDKException::class);
         $this->expectExceptionMessage('merchantId must be set when call APIs.');
         $httpClient = new DummyHttpClient($this, function(){});
-        new $this->abstractApiTest($httpClient, 'test_url', 'test_sign_key', null);
+        new $this->abstractApiTest($httpClient, 'test_url', 'test_sign_key', 'test_access_key', null);
     }
 }

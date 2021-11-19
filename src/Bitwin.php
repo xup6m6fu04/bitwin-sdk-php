@@ -22,6 +22,8 @@ class Bitwin
     /** @var string */
     private $signKey;
     /** @var string */
+    private $accessKey;
+    /** @var string */
     private $endpointBase;
     /** @var HTTPClient */
     private $httpClient;
@@ -35,6 +37,7 @@ class Bitwin
         $args = array_merge([
             'merchant_id' => '',
             'sign_key' => '',
+            'access_key' => '',
             'is_prod_environment' => false,
         ], $args);
 
@@ -46,8 +49,13 @@ class Bitwin
             throw new BitwinSDKException('Required "sign_key"');
         }
 
+        if (!$args['access_key']) {
+            throw new BitwinSDKException('Required "access_key"');
+        }
+
         $this->merchantId = $args['merchant_id'];
         $this->signKey = $args['sign_key'];
+        $this->accessKey = $args['access_key'];
         $this->endpointBase = $args['is_prod_environment'] === true ? static::PROD_API_BASE_URL : static::TEST_API_BASE_URL;
     }
 
@@ -59,27 +67,27 @@ class Bitwin
         switch ($name) {
             case 'CreateCryptoPayOrder':
                 $url = $this->endpointBase . '/CreateCryptoPayOrder';
-                $api = new CreateCryptoPayOrder($this->httpClient, $url, $this->signKey, $this->merchantId);
+                $api = new CreateCryptoPayOrder($this->httpClient, $url, $this->signKey, $this->accessKey, $this->merchantId);
                 break;
             case 'QueryCryptoPayOrder':
                 $url = $this->endpointBase . '/QueryCryptoPayOrder';
-                $api = new QueryCryptoPayOrder($this->httpClient, $url, $this->signKey, $this->merchantId);
+                $api = new QueryCryptoPayOrder($this->httpClient, $url, $this->signKey, $this->accessKey, $this->merchantId);
                 break;
             case 'MerchantWithdraw':
                 $url = $this->endpointBase . '/MerchantWithdraw';
-                $api = new MerchantWithdraw($this->httpClient, $url, $this->signKey, $this->merchantId);
+                $api = new MerchantWithdraw($this->httpClient, $url, $this->signKey, $this->accessKey, $this->merchantId);
                 break;
             case 'QueryMerchantWithdraw':
                 $url = $this->endpointBase . '/QueryMerchantWithdraw';
-                $api = new QueryMerchantWithdraw($this->httpClient, $url, $this->signKey, $this->merchantId);
+                $api = new QueryMerchantWithdraw($this->httpClient, $url, $this->signKey, $this->accessKey, $this->merchantId);
                 break;
             case 'ExchangeRate':
                 $url = $this->endpointBase . '/ExchangeRate';
-                $api = new ExchangeRate($this->httpClient, $url, $this->signKey, $this->merchantId);
+                $api = new ExchangeRate($this->httpClient, $url, $this->signKey, $this->accessKey, $this->merchantId);
                 break;
             case 'BuildRelationUser':
                 $url = $this->endpointBase . '/BuildRelationUser';
-                $api = new BuildRelationUser($this->httpClient, $url, $this->signKey, $this->merchantId);
+                $api = new BuildRelationUser($this->httpClient, $url, $this->signKey, $this->accessKey, $this->merchantId);
                 break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));

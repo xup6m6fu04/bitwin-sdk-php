@@ -21,9 +21,9 @@ $c = new Example();
 /*建立商戶出款單*/
 //$c->merchantWithdraw();
 /*查詢商戶出款單*/
-//$c->queryMerchantWithdraw();
+$c->queryMerchantWithdraw();
 /*查詢建議匯率*/
-$c->exchangeRate();
+//$c->exchangeRate();
 /*BITWIN 會員錢包綁定*/
 
 //$c->buildRelationUser();
@@ -46,8 +46,9 @@ class Example
     {
         $this->httpClient = new GuzzleHTTPClient();
         $this->bitwin = new Bitwin($this->httpClient, [
-            'merchant_id' => 'your_merchant_id',
-            'sign_key' => 'your_sign_key',
+            'merchant_id' => 'yozero',
+            'sign_key' => '78BE61C994B4ECD4C7E3BC1C1AE86703',
+            'access_key' => '1d006af9-45ea-11ec-b215-029e914f4f74',
             'is_prod_environment' => false, // true is production environment
         ]);
     }
@@ -211,8 +212,8 @@ class Example
     {
         try {
             $args = [
-                'MerchantWithdrawId' => 'YOZERO_WITHDRAW_01',
-                'WithdrawId' => '53304076324244832',
+                'MerchantWithdrawId' => 'YOZERO_WITHDRAW_0000001',
+                'WithdrawId' => '53192080311396704',
                 'TimeStamp' => '1628664587'
             ];
             $result = $this->bitwin->api('QueryMerchantWithdraw')->call($args);
