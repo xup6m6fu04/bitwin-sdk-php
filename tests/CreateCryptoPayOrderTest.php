@@ -24,14 +24,15 @@ class CreateCryptoPayOrderTest extends TestCase
             'MerchantOrderId' => 'YOZERO_ORDER_01',
             'OrderDescription' => 'YOZERO_DESC_01',
             'Amount' => '700000000', // 7 USDT
-            'MerchantRMB' => '45.38',
+            'FiatCurrency' => 'RMB',
+            'FiatCurrencyAmount' => '45.38',
             'Symbol' => 'USDT_ERC20',
             'CallBackUrl' => 'https://test.com/api/callback',
             'TimeStamp' => '1628664587',
         ];
         $mock = function ($testRunner, $httpMethod, $url, $data) use ($args, $config) {
             $testRunner->assertEquals('POST', $httpMethod);
-            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v3/CreateCryptoPayOrder', $url);
+            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v4/CreateCryptoPayOrder', $url);
             $args['MerchantId'] = $config['merchant_id'];
             $args['Sign'] = $data['Sign'];
             $testRunner->assertEquals($args, $data);

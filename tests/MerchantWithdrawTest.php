@@ -24,14 +24,15 @@ class MerchantWithdrawTest extends TestCase
             'MerchantWithdrawId' => 'YOZERO_WITHDRAW_01',
             'UserWallet' => '0x875EDa094F03Ed4c93adb3dbb77913F860dC888f',
             'Amount' => '1000000000', // 10 USDT
-            'MerchantRMB' => '64.81',
+            'FiatCurrency' => 'RMB',
+            'FiatCurrencyAmount' => '64.81',
             'Symbol' => 'USDT_ERC20',
             'CallBackUrl' => 'https://test.com/api/callback',
             'TimeStamp' => '1628664587'
         ];
         $mock = function ($testRunner, $httpMethod, $url, $data) use ($args, $config) {
             $testRunner->assertEquals('POST', $httpMethod);
-            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v3/MerchantWithdraw', $url);
+            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v4/MerchantWithdraw', $url);
             $args['MerchantId'] = $config['merchant_id'];
             $args['Sign'] = $data['Sign'];
             $testRunner->assertEquals($args, $data);

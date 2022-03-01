@@ -14,8 +14,8 @@ use Xup6m6fu04\Bitwin\HTTPClient;
 
 class Bitwin
 {
-    const TEST_API_BASE_URL = "https://stage-api.bitwin.ai/api/v3";
-    const PROD_API_BASE_URL = "https://api.bitwin.ai/api/v3";
+    const TEST_API_BASE_URL = "https://stage-api.bitwin.ai/api/v4";
+    const PROD_API_BASE_URL = "https://api.bitwin.ai/api/v4";
 
     /** @var string */
     private $merchantId;
