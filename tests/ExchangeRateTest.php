@@ -24,7 +24,7 @@ class ExchangeRateTest extends TestCase
         ];
         $mock = function ($testRunner, $httpMethod, $url, $data) use ($args, $config) {
             $testRunner->assertEquals('POST', $httpMethod);
-            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v3/ExchangeRate', $url);
+            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v4/ExchangeRate', $url);
             $args['MerchantId'] = $config['merchant_id'];
             $args['Sign'] = $data['Sign'];
             $testRunner->assertEquals($args, $data);

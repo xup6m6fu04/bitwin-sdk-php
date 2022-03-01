@@ -1,4 +1,4 @@
-# Bitwin SDK for PHP (v3)
+# Bitwin SDK for PHP (v4)
 
 🌍 *[English](README.md) ∙ [繁體中文](README_zh-TW.md) ∙ [简体中文](README_zh-CN.md)*
 
@@ -77,7 +77,8 @@ class Example
                 'MerchantOrderId' => 'YOZERO_ORDER_01',
                 'OrderDescription' => 'YOZERO_DESC_01',
                 'Amount' => '700000000', // 7 USDT
-                'MerchantRMB' => '45.38',
+                'FiatCurrency' => 'RMB',
+                'FiatCurrencyAmount' => '45.38',
                 'Symbol' => 'USDT_ERC20',
                 'CallBackUrl' => 'https://test.com/api/callback',
                 'TimeStamp' => '1628664587'

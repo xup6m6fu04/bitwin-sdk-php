@@ -26,7 +26,7 @@ class QueryCryptoPayOrderTest extends TestCase
         ];
         $mock = function ($testRunner, $httpMethod, $url, $data) use ($args, $config) {
             $testRunner->assertEquals('POST', $httpMethod);
-            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v3/QueryCryptoPayOrder', $url);
+            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v4/QueryCryptoPayOrder', $url);
             $args['MerchantId'] = $config['merchant_id'];
             $args['Sign'] = $data['Sign'];
             $testRunner->assertEquals($args, $data);
@@ -38,7 +38,8 @@ class QueryCryptoPayOrderTest extends TestCase
                 'Symbol' => 'USDT_ERC20',
                 'Amount' => '700000000',
                 'RealAmount' => '700000000',
-                'MerchantRMB' => '45.38',
+                'FiatCurrency' => 'RMB',
+                'FiatCurrencyAmount' => '45.38',
                 'ExchangeRMB' => '45.85',
                 'OrderStatus' => 'SUCCESS',
                 'CallBackUrl' => 'https://test.com/api/callback',
@@ -58,7 +59,8 @@ class QueryCryptoPayOrderTest extends TestCase
             'Symbol' => 'USDT_ERC20',
             'Amount' => '700000000',
             'RealAmount' => '700000000',
-            'MerchantRMB' => '45.38',
+            'FiatCurrency' => 'RMB',
+            'FiatCurrencyAmount' => '45.38',
             'ExchangeRMB' => '45.85',
             'OrderStatus' => 'SUCCESS',
             'CallBackUrl' => 'https://test.com/api/callback',

@@ -66,7 +66,8 @@ class Example
                 'MerchantOrderId' => 'YOZERO_ORDER_01',
                 'OrderDescription' => 'YOZERO_DESC_01',
                 'Amount' => '700000000', // 7 USDT
-                'MerchantRMB' => '45.38',
+                'FiatCurrency' => 'RMB',
+                'FiatCurrencyAmount' => '45.38',
                 'Symbol' => 'USDT_ERC20',
                 'CallBackUrl' => 'https://test.com/api/callback',
                 'TimeStamp' => '1628664587'
@@ -118,7 +119,8 @@ class Example
              *     [Symbol] => USDT_ERC20
              *     [Amount] => 700000000
              *     [RealAmount] => 700000000
-             *     [MerchantRMB] => 45.38
+             *     [FiatCurrency] => RMB
+             *     [FiatCurrencyAmount] => 45.38
              *     [ExchangeRMB] => 45.85
              *     [OrderStatus] => PENDING
              *     [CallBackUrl] => https://test.com/api/callback
@@ -138,7 +140,8 @@ class Example
              *     [Symbol] => USDT_ERC20
              *     [Amount] => 700000000
              *     [RealAmount] => 700000000
-             *     [MerchantRMB] => 45.38
+             *     [FiatCurrency] => RMB
+             *     [FiatCurrencyAmount] => 45.38
              *     [ExchangeRMB] => 45.85
              *     [OrderStatus] => SUCCESS
              *     [CallBackUrl] => https://test.com/api/callback
@@ -156,10 +159,11 @@ class Example
              *  'Symbol' => 'USDT_ERC20',
              *  'Amount' => '700000000',
              *  'PayAmount' => '700000000',
-             *  'MerchantRMB' => '45.38',
+             *  'FiatCurrency' => 'RMB',
+             *  'FiatCurrencyAmount' => '45.38',
              *  'ExchangeRMB' => '45.85',
              *  'PayUnixTimestamp' => 1628667177,
-             *  'Sign' => '4B8CEE2EED8A86D1A2C47752E11FA818',
+             *  'Sign' => '4B8CEE2EED8A86D1A2C47752E11FA818'
              *  )
              */
         } catch (BitwinSDKException | Exception $e) {
@@ -180,7 +184,8 @@ class Example
                 'MerchantWithdrawId' => 'YOZERO_WITHDRAW_01',
                 'UserWallet' => '0x875EDa094F03Ed4c93adb3dbb77913F860dC888f',
                 'Amount' => '1000000000', // 10 USDT
-                'MerchantRMB' => '64.81',
+                'FiatCurrency' => 'RMB',
+                'FiatCurrencyAmount' => '64.81',
                 'Symbol' => 'USDT_ERC20',
                 'CallBackUrl' => 'https://test.com/api/callback',
                 'TimeStamp' => '1628664587'
@@ -228,7 +233,8 @@ class Example
              *     [MerchantWithdrawId] => YOZERO_WITHDRAW_01
              *     [Symbol] => USDT_ERC20
              *     [Amount] => 1000000000
-             *     [MerchantRMB] => 64.81
+             *     [FiatCurrency] => RMB
+             *     [FiatCurrencyAmount] => 64.81
              *     [ExchangeRMB] => 68.00
              *     [Status] => PENDING
              *     [ReturnCode] => 200
@@ -246,7 +252,8 @@ class Example
              *     [MerchantWithdrawId] => YOZERO_WITHDRAW_01
              *     [Symbol] => USDT_ERC20
              *     [Amount] => 1000000000
-             *     [MerchantRMB] => 64.81
+             *     [FiatCurrency] => RMB
+             *     [FiatCurrencyAmount] => 64.81
              *     [ExchangeRMB] => 68.00
              *     [Status] => SUCCESS
              *     [WithdrawDateTime] => 1628671968
@@ -265,7 +272,8 @@ class Example
              *    "UserWallet": "x875EDa094F03Ed4c93adb3dbb77913F860dC888f",
              *    "WithdrawId": "53304076324244832",
              *    "WithdrawAmount": "1000000000",
-             *    "MerchantRMB": "64.81",
+             *    "FiatCurrency": "RMB",
+             *    "FiatCurrencyAmount": "64.81",
              *    "ExchangeRMB": "68.00",
              *    "Symbol": "USDT_ERC20",
              *    "ReplyDateTime": 1628671968,

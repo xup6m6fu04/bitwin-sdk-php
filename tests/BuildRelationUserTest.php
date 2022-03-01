@@ -26,13 +26,13 @@ class BuildRelationUserTest extends TestCase
         ];
         $mock = function ($testRunner, $httpMethod, $url, $data) use ($args, $config) {
             $testRunner->assertEquals('POST', $httpMethod);
-            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v3/BuildRelationUser', $url);
+            $testRunner->assertEquals('https://stage-api.bitwin.ai/api/v4/BuildRelationUser', $url);
             $args['MerchantId'] = $config['merchant_id'];
             $args['Sign'] = $data['Sign'];
             $testRunner->assertEquals($args, $data);
             return [
                 'QrcodeData' => 'BITWIN$eyJhY3Rpb24iOiJtb2JpbGUvdjMvdXNlci9iaW5kIiwiZGF0YSI6eyJuYW1lIjoiNDRFNkYyMDJEOTU2NDhDNTdBOEYwMTAyREMyQjlEREUiLCJjb2RlIjoiM0xEVkYiLCJtZXJjaGFudF9uYW1lIjoieW96ZXJvIn19',
-                'QrcodeImageUrl' => 'https://stage-api.bitwin.ai/web/v3/bind/user/44E6F202D95648C57A8F0102DC2B9DDE',
+                'QrcodeImageUrl' => 'https://stage-api.bitwin.ai/web/v4/bind/user/44E6F202D95648C57A8F0102DC2B9DDE',
                 'ReturnCode' => '200',
                 'ReturnMessage' => '',
                 'Sign' => 'C00CA273DC3CA6CBDA81E2EB2B12B5D5'
@@ -43,7 +43,7 @@ class BuildRelationUserTest extends TestCase
         $response = $bitwin->api('BuildRelationUser')->call($args);
         $this->assertEquals([
             'QrcodeData' => 'BITWIN$eyJhY3Rpb24iOiJtb2JpbGUvdjMvdXNlci9iaW5kIiwiZGF0YSI6eyJuYW1lIjoiNDRFNkYyMDJEOTU2NDhDNTdBOEYwMTAyREMyQjlEREUiLCJjb2RlIjoiM0xEVkYiLCJtZXJjaGFudF9uYW1lIjoieW96ZXJvIn19',
-            'QrcodeImageUrl' => 'https://stage-api.bitwin.ai/web/v3/bind/user/44E6F202D95648C57A8F0102DC2B9DDE',
+            'QrcodeImageUrl' => 'https://stage-api.bitwin.ai/web/v4/bind/user/44E6F202D95648C57A8F0102DC2B9DDE',
             'ReturnCode' => '200',
             'ReturnMessage' => '',
             'Sign' => 'C00CA273DC3CA6CBDA81E2EB2B12B5D5'
