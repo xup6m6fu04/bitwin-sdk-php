@@ -24,7 +24,7 @@ class MerchantWithdrawTest extends TestCase
             'MerchantWithdrawId' => 'YOZERO_WITHDRAW_01',
             'UserWallet' => '0x875EDa094F03Ed4c93adb3dbb77913F860dC888f',
             'Amount' => '1000000000', // 10 USDT
-            'FiatCurrency' => 'RMB',
+            'FiatCurrency' => 'CNY',
             'FiatCurrencyAmount' => '64.81',
             'Symbol' => 'USDT_ERC20',
             'CallBackUrl' => 'https://test.com/api/callback',

@@ -24,7 +24,7 @@ class CreateCryptoPayOrderTest extends TestCase
             'MerchantOrderId' => 'YOZERO_ORDER_01',
             'OrderDescription' => 'YOZERO_DESC_01',
             'Amount' => '700000000', // 7 USDT
-            'FiatCurrency' => 'RMB',
+            'FiatCurrency' => 'CNY',
             'FiatCurrencyAmount' => '45.38',
             'Symbol' => 'USDT_ERC20',
             'CallBackUrl' => 'https://test.com/api/callback',
